@@ -1,5 +1,6 @@
 import Link from '../src/components/Link';
 import PageTitle from '../src/components/PageTitle';
+import FAQScreen from '../src/screens/FaqScreen';
 
 // SSG - Static Site Generation;
 // SSR - Server Side Rendering;
@@ -29,27 +30,4 @@ export async function getStaticProps(context) {
     };
 }
 
-export default function FaqPage({ faq }) {
-    return (
-        <div>
-            <PageTitle 
-                label="FAQ - Alura Cases Campanha"
-            />
-            <h1>Alura Cases - Página de perguntas FAQ</h1>
-            <Link href="/" label="Ir para a home"/>
-            <ul>
-                {
-                    faq &&
-                    faq.map( ({ question, answer }, index) => 
-                        <li key={index}>
-                            <article>
-                                <h2>{question}</h2>
-                                <p>{answer}</p>
-                            </article>
-                        </li>
-                    )
-                }
-            </ul>
-        </div>
-    )
-}
+export default FAQScreen;
