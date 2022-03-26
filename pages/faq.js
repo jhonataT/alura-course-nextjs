@@ -1,3 +1,5 @@
+import Link from '../src/components/Link';
+import PageTitle from '../src/components/PageTitle';
 
 // SSG - Static Site Generation;
 // SSR - Server Side Rendering;
@@ -29,7 +31,12 @@ export async function getStaticProps(context) {
 
 export default function FaqPage({ faq }) {
     return (
-        <>
+        <div>
+            <PageTitle 
+                label="FAQ - Alura Cases Campanha"
+            />
+            <h1>Alura Cases - Página de perguntas FAQ</h1>
+            <Link href="/" label="Ir para a home"/>
             <ul>
                 {
                     faq &&
@@ -43,6 +50,6 @@ export default function FaqPage({ faq }) {
                     )
                 }
             </ul>
-        </>
+        </div>
     )
 }
